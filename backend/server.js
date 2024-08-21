@@ -8,7 +8,7 @@ dotenv.config();
 import userRoutes from './routes/userRoutes.js';
 import projectRoutes from './routes/projectRoutes.js'
 import taskRouter from './routes/taskRoutes.js'
-import { notFound, errorHandler } from './middleware/errorMiddleware.js';
+// import { notFound, errorHandler } from './middleware/errorMiddleware.js';
 
 const port = process.env.PORT || 5000;
 
@@ -41,8 +41,8 @@ if (process.env.NODE_ENV === 'production') {
     });
 }
 
-app.use(notFound);
-app.use(errorHandler);
+// app.use(notFound);
+// app.use(errorHandler);
 
 app.listen(port, () => {
     console.log("server started succesfully at port: ", port)
