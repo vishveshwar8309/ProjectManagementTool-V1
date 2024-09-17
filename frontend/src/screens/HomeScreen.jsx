@@ -158,8 +158,8 @@ const HomeScreen = () => {
                             </Link>
                           </td>
                           <td>{project.teamMembers.length}</td>
-                          <td>{project.endDate.substring(0, 10)}</td>
                           <td>{project.startDate.substring(0, 10)}</td>
+                          <td>{project.endDate.substring(0, 10)}</td>
                         </tr>
                         <br />
                       </>

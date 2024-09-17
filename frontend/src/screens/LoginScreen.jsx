@@ -4,6 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { toast } from "react-toastify";
 import FormContainer from "../components/FormContainer";
+import Loader from "../components/Loader";
 import { useLoginUserMutation } from "../slices/userApiSlice";
 import { saveCredentials } from "../slices/authSlice";
 
@@ -40,6 +41,7 @@ const LoginScreen = () => {
   return (
     <FormContainer>
       <h1 className="mt-5">User Login</h1>
+      {isLoading ? <Loader /> : <></>}
       <Form className="mt-5" onSubmit={submitHandler}>
         <Form.Group controlId="email" className="my-3">
           <Form.Label>Email:</Form.Label>

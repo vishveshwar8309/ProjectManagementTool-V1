@@ -3,6 +3,7 @@ import { Form, Button } from "react-bootstrap";
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import FormContainer from "../components/FormContainer";
+import Loader from "../components/Loader";
 import { useRegisterUserMutation } from "../slices/userApiSlice";
 import { saveCredentials } from "../slices/authSlice";
 import { toast } from "react-toastify";
@@ -25,7 +26,7 @@ const RegisterScreen = () => {
     }
   }, [userInfo]);
 
-  const [registerUser, { isLoading, error }] = useRegisterUserMutation();
+  const [registerUser, { isLoading }] = useRegisterUserMutation();
 
   const submitHandler = async (e) => {
     e.preventDefault();
@@ -52,6 +53,7 @@ const RegisterScreen = () => {
   return (
     <FormContainer>
       <h1 className="mt-5">Register User</h1>
+      {isLoading ? <Loader /> : <></>}
       <Form className="mt-4" onSubmit={submitHandler}>
         <Form.Group controlId="email" className="my-3">
           <Form.Label>Email:</Form.Label>

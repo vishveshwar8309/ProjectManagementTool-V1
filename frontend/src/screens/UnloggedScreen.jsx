@@ -17,9 +17,18 @@ const UnloggedScreen = () => {
       {userInfo ? (
         <Navigate to="/projectmanagementtool" />
       ) : (
-        <Button variant="success" onClick={handleClick}>
-          signIn to continue
-        </Button>
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            height: "90vh",
+          }}
+        >
+          <Button variant="success" onClick={handleClick}>
+            signIn to continue
+          </Button>
+        </div>
       )}
     </div>
   );

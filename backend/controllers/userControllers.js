@@ -55,7 +55,6 @@ const logoutUser = async (req, res) => {
 const getEmployersData = async (req, res) => {
     const ids = req.body;
     try {
-
         const employeesData = await User.find({ _id: { $in: ids } })
 
         if (ids.length === employeesData.length) {
